@@ -7,68 +7,77 @@
     android:orientation="vertical"
     tools:context="com.example.roman.timemanager.MainActivity">
 
+
+    <!-- Aligns the display and gets free area -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <!-- Sets display's bound's and positions it in the center-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <!-- Allows overlapping of it's child nodes-->
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
-                <TextView
-                    style="@style/DisplayHints"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                <!-- TIME CAPTIONS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="hours"
-                    android:layout_gravity="center"
-                    />
+                    android:layout_gravity="top|center_horizontal"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        style="@style/DisplayHints"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="hours"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        style="@style/DisplayHints"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="minutes"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        style="@style/DisplayHints"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="seconds"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <!-- TIME DISPLAY -->
                 <TextView
-                    style="@style/DisplayHints"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                    style="@style/Display"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="minutes"
-                    android:layout_gravity="center"
-                    />
+                    android:layout_marginTop="4sp"
+                    android:includeFontPadding="false"
+                    android:text="00:00:00"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
 
-                <TextView
-                    style="@style/DisplayHints"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="seconds"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
-
-            <TextView
-                style="@style/Display"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="0pt"
-                android:padding="0pt"
-                android:includeFontPadding="false"
-                android:lineSpacingExtra="0pt"
-                android:lineSpacingMultiplier="1"
-                android:text="00:00:00"
-                android:layout_gravity="center"
-                />
         </LinearLayout>
+
     </FrameLayout>
 
+
+    <!-- BUTTONS -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,4 +99,5 @@
             android:textColor="@android:color/white"
             android:background="#D50000"/>
     </LinearLayout>
+
 </LinearLayout>
